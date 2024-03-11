@@ -6,9 +6,6 @@
     apply:
       become: "{{ become_override | bool }}"
 
-- name: Remove Bookbag
-  ansible.builtin.include_tasks: remove_bookbag.yml
-
 - name: Remove Workshop Deployer
   ansible.builtin.include_tasks: remove_workshop_deployer.yml
 

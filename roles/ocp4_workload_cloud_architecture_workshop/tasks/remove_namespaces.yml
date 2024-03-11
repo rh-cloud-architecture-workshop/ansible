@@ -1,16 +1,5 @@
 ---
 
-- name: Delete bookbag namespaces
-  kubernetes.core.k8s:
-    state: absent
-    api_version: v1
-    kind: Namespace
-    name: "{{ ocp4_workload_cloud_architecture_workshop_bookbag_namespace_prefix }}-{{ __user }}"
-    wait: true
-  loop: "{{ r_cloud_architecture_workshop_users }}"
-  loop_control:
-    loop_var: __user
-
 - name: Delete workshop deployer namespace
   kubernetes.core.k8s:
     state: absent
