@@ -106,3 +106,14 @@
   loop: "{{ r_cloud_architecture_workshop_users }}"
   loop_control:
     loop_var: __user
+
+- name: Delete showroom namespaces
+  kubernetes.core.k8s:
+    state: absent
+    api_version: v1
+    kind: Namespace
+    name: "{{ ocp4_workload_cloud_architecture_workshop_showroom_namespace }}-{{ __user }}"
+    wait: true
+  loop: "{{ r_cloud_architecture_workshop_users }}"
+  loop_control:
+    loop_var: __user
