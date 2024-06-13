@@ -552,6 +552,7 @@ ocp4_workload_cloud_architecture_workshop_workshop_deployer_host: workshop-deplo
 # Showroom
 # ------------------------------------------------
 ocp4_workload_cloud_architecture_workshop_showroom_deployment_type: helm
+ocp4_workload_cloud_architecture_workshop_showroom_deployer_chart_version: 1.1.0
 ocp4_workload_cloud_architecture_workshop_showroom_content_git_repo: >-
   https://github.com/rh-cloud-architecture-workshop/showroom.git
 ocp4_workload_cloud_architecture_workshop_showroom_content_git_repo_ref: main
