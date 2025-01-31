@@ -16,7 +16,7 @@ ocp4_workload_cloud_architecture_workshop_user_prefix: "{{ ocp4_workload_authent
 # AMQ Streams Operator
 # ------------------------------------------------
 
-ocp4_workload_cloud_architecture_workshop_amq_streams_operator_channel: ""
+ocp4_workload_cloud_architecture_workshop_amq_streams_operator_channel: "stable"
 ocp4_workload_cloud_architecture_workshop_amq_streams_operator_automatic_install_plan_approval: true
 ocp4_workload_cloud_architecture_workshop_amq_streams_operator_starting_csv: ""
 ocp4_workload_cloud_architecture_workshop_amq_streams_operator_name: amq-streams
@@ -36,7 +36,7 @@ ocp4_workload_cloud_architecture_workshop_amq_streams_operator_requests_memory: 
 # OpenShift Pipelines Operator
 # ------------------------------------------------
 
-ocp4_workload_cloud_architecture_workshop_openshift_pipelines_operator_channel: ""
+ocp4_workload_cloud_architecture_workshop_openshift_pipelines_operator_channel: latest
 ocp4_workload_cloud_architecture_workshop_openshift_pipelines_operator_automatic_install_plan_approval: true
 ocp4_workload_cloud_architecture_workshop_openshift_pipelines_operator_starting_csv: ""
 ocp4_workload_cloud_architecture_workshop_openshift_pipelines_operator_name: openshift-pipelines-operator-rh
@@ -232,7 +232,7 @@ ocp4_workload_cloud_architecture_workshop_camelk_operator_catalog_snapshot_image
 # Devspaces Operator
 # ------------------------------------------------
 
-ocp4_workload_cloud_architecture_workshop_devspaces_operator_channel: ""
+ocp4_workload_cloud_architecture_workshop_devspaces_operator_channel: stable
 ocp4_workload_cloud_architecture_workshop_devspaces_operator_starting_csv: ""
 ocp4_workload_cloud_architecture_workshop_devspaces_operator_wait_for_deploy: true
 ocp4_workload_cloud_architecture_workshop_devspaces_operator_name: devspaces
@@ -250,7 +250,7 @@ ocp4_workload_cloud_architecture_workshop_devspaces_operator_catalog_snapshot_im
 
 ocp4_workload_cloud_architecture_workshop_threescale_operator_name: 3scale-operator
 ocp4_workload_cloud_architecture_workshop_threescale_operator_namespace: openshift-operators
-ocp4_workload_cloud_architecture_workshop_threescale_operator_channel: "threescale-2.14"
+ocp4_workload_cloud_architecture_workshop_threescale_operator_channel: "threescale-2.15"
 ocp4_workload_cloud_architecture_workshop_threescale_operator_automatic_install_plan_approval: true
 ocp4_workload_cloud_architecture_workshop_threescale_operator_starting_csv: ""
 ocp4_workload_cloud_architecture_workshop_threescale_operator_catalog: redhat-operators
@@ -288,7 +288,7 @@ ocp4_workload_cloud_architecture_workshop_rhbk_operator_catalog_snapshot_image_t
 
 ocp4_workload_cloud_architecture_workshop_datagrid_operator_name: datagrid
 ocp4_workload_cloud_architecture_workshop_datagrid_operator_namespace: openshift-operators
-ocp4_workload_cloud_architecture_workshop_datagrid_operator_channel: ""
+ocp4_workload_cloud_architecture_workshop_datagrid_operator_channel: stable
 ocp4_workload_cloud_architecture_workshop_datagrid_operator_automatic_install_plan_approval: true
 ocp4_workload_cloud_architecture_workshop_datagrid_operator_starting_csv: ""
 ocp4_workload_cloud_architecture_workshop_datagrid_operator_catalog: redhat-operators
@@ -359,7 +359,7 @@ ocp4_workload_cloud_architecture_workshop_service_registry_operator_catalog_snap
 # Apicurio Designer Operator
 # ------------------------------------------------
 
-ocp4_workload_cloud_architecture_workshop_apicurio_operator_channel: "fuse-apicurito-7.12.x"
+ocp4_workload_cloud_architecture_workshop_apicurio_operator_channel: "fuse-apicurito-7.13.x"
 ocp4_workload_cloud_architecture_workshop_apicurio_operator_automatic_install_plan_approval: true
 ocp4_workload_cloud_architecture_workshop_apicurio_operator_starting_csv: ""
 ocp4_workload_cloud_architecture_workshop_apicurio_operator_name: fuse-apicurito
@@ -378,7 +378,7 @@ ocp4_workload_cloud_architecture_workshop_apicurio_operator_catalog_snapshot_ima
 # Serverless Operator
 # ------------------------------------------------
 
-ocp4_workload_cloud_architecture_workshop_serverless_operator_channel: ""
+ocp4_workload_cloud_architecture_workshop_serverless_operator_channel: "stable"
 ocp4_workload_cloud_architecture_workshop_serverless_operator_automatic_install_plan_approval: true
 ocp4_workload_cloud_architecture_workshop_serverless_operator_starting_csv: ""
 ocp4_workload_cloud_architecture_workshop_serverless_operator_name: serverless-operator
@@ -418,8 +418,10 @@ ocp4_workload_cloud_architecture_workshop_threescale_namespace: 3scale
 ocp4_workload_cloud_architecture_workshop_threescale_apimanager_application_name: threescale
 
 ocp4_workload_cloud_architecture_workshop_threescale_minio_stateful: true
-# when deploying on cnv infrastructure
-ocp4_workload_cloud_architecture_workshop_threescale_minio_storageclass: ocs-external-storagecluster-ceph-rbd
+# # when deploying on cnv infrastructure
+# ocp4_workload_cloud_architecture_workshop_threescale_minio_storageclass: ocs-external-storagecluster-ceph-rbd
+# when deploying on ARO infrastructure
+ocp4_workload_cloud_architecture_workshop_threescale_minio_storageclass: managed-csi
 # when deploying on AWS infrastructure
 # ocp4_workload_cloud_architecture_workshop_threescale_minio_storageclass: gp3-csi
 ocp4_workload_cloud_architecture_workshop_threescale_minio_default_region: us-east-1
@@ -500,6 +502,15 @@ ocp4_workload_cloud_architecture_workshop_camel_common_gitops_repo_path: globex-
 ocp4_workload_cloud_architecture_workshop_camel_common_synapse_matrix_host: matrix-synapse
 ocp4_workload_cloud_architecture_workshop_camel_common_rocketchat_host: rocketchat
 ocp4_workload_cloud_architecture_workshop_camel_common_element_host: element
+
+# when deploying on ARO infrastructure
+ocp4_workload_cloud_architecture_workshop_camel_common_minio_storageclass: managed-csi
+# when deploying on AWS infrastructure
+# ocp4_workload_cloud_architecture_workshop_camel_common_minio_storageclass: gp3-csi
+ocp4_workload_cloud_architecture_workshop_camel_common_minio_default_region: us-east-1
+ocp4_workload_cloud_architecture_workshop_camel_common_minio_access_key_id: minio
+ocp4_workload_cloud_architecture_workshop_camel_common_minio_secret_access_key: minio123
+
 
 # ------------------------------------------------
 # Workshop
